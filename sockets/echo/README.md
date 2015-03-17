@@ -13,4 +13,3 @@ Mit netcat (nc):
 * Mit "sudo netstat -anp" aufgebaute Verbindung anzeigen
   * sudo verwenden, um Prozess-ID und -Namen angezeigt zu bekommen (benötigt root-Rechte)
 * Mit "sudo netstat -lnptu" alle TCP-Verbindungen im Zustand "listening" anzuzeigen
-* 
