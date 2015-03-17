@@ -5,8 +5,8 @@
 #include <string.h>
 #include <stdio.h>
 
-// Ausbaustufe 1: Verbindungen von Clients annehmen (nur eine Verbindung
-// gleichzeitig moeglich)
+// Ausbaustufe 1a: Verbindungen von Clients annehmen (nur eine Verbindung
+// gleichzeitig moeglich) und Verbindungsdaten ausgeben (-> accept)
 int main(void) {
   // Creates an endpoint for communication and returns a descriptor.
   // - AF_INET fuer IPv4-Verbindung
@@ -38,9 +38,13 @@ int main(void) {
   // - 10 = maximum length to which the queue of pending connections
   listen(server_sock, 10);
 
-  const int client_sock = accept(server_sock, NULL, NULL);
+  struct sockaddr_in client_addr;
+  socklen_t client_addr_len = sizeof(client_addr);
+  const int client_sock =
+      accept(server_sock, (struct sockaddr *)&client_addr, &client_addr_len);
 
-  printf("Connection established.\n");
+  printf("Connection established to client %s:%i\n",
+         inet_ntoa(client_addr.sin_addr), client_addr.sin_port);
 
   getchar();
   close(client_sock);

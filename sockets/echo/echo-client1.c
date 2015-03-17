@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 // Ausbaustufe 1: Verbindung zum Server aufbauen
+// (Achtung: Fehlerbehandlung fehlt!)
 int main(void) {
   // Creates an endpoint for communication and returns a descriptor.
   // AF_INET fuer IPv4-Verbindung
@@ -21,8 +22,8 @@ int main(void) {
   server_addr.sin_family = AF_INET;
   // IP-String zu binaerer IPv4-Adresse
   inet_pton(AF_INET, "127.0.0.1", &(server_addr.sin_addr));
-  // Server akzeptiert Verbindungen an TCP-Port 22000
-  server_addr.sin_port = htons(22000);
+  // Server akzeptiert Verbindungen an TCP-Port 20000
+  server_addr.sin_port = htons(20000);
 
   // Verbindung herstellen
   connect(client_sock, (struct sockaddr *)&server_addr, sizeof(server_addr));
