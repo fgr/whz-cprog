@@ -11,4 +11,6 @@ Mit netcat (nc):
 
 * Verbindung zum Server herstellen
 * Mit "sudo netstat -anp" aufgebaute Verbindung anzeigen
-** sudo verwenden, um Prozess-ID und -Namen angezeigt zu bekommen (benötigt root-Rechte)
+  * sudo verwenden, um Prozess-ID und -Namen angezeigt zu bekommen (benötigt root-Rechte)
+* Mit "sudo netstat -lnptu" alle TCP-Verbindungen im Zustand "listening" anzuzeigen
+* 
