@@ -25,20 +25,20 @@ int main(void) {
   if (bind(server_sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) ==
       -1) {
     fprintf(stderr, "Error binding socket: %s\n", strerror(errno));
-    exit(1);
+    exit(EXIT_FAILURE);
   }
 
   printf("Waiting for connections from clients...\n");
   if (listen(server_sock, 10) == -1) {
     // besser perror verwenden
     fprintf(stderr, "Error listening on socket: %s\n", strerror(errno));
-    exit(1);
+    exit(EXIT_FAILURE);
   }
 
   const int client_sock = accept(server_sock, NULL, NULL);
   if (-1 == client_sock) {
     perror("Error opening socket.");
-    exit(1);
+    exit(EXIT_FAILURE);
   }
   printf("Connection established.\n");
 
@@ -49,19 +49,19 @@ int main(void) {
   // Daten vom Client lesen
   if ((bytes_received = recv(client_sock, buffer, buffer_sz, 0)) == -1) {
     perror("Failed to receive initial data from client");
-    exit(1);
+    exit(EXIT_FAILURE);
   }
 
   // Daten zum Client senden und weitere Daten vom Client lesen
   while (bytes_received > 0) {
     if (send(client_sock, buffer, bytes_received, 0) != bytes_received) {
       perror("Failed to send data to client");
-      exit(1);
+      exit(EXIT_FAILURE);
     }
 
     if ((bytes_received = recv(client_sock, buffer, buffer_sz, 0)) == -1) {
       perror("Failed to receive additional data from client");
-      exit(1);
+      exit(EXIT_FAILURE);
     }
   }
 
