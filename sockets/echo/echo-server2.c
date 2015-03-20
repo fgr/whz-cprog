@@ -38,5 +38,6 @@ int main(void) {
 
   // Keine weiteren Daten vom Client; Verbindung schliessen
   close(client_sock);
+  close(server_sock);
   printf("Connection closed.\n");
 }

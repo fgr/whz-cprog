@@ -44,5 +44,6 @@ int main(void) {
 
   getchar();
   close(client_sock);
+  close(server_sock);
   printf("Connection closed.\n");
 }

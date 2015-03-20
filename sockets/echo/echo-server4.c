@@ -70,10 +70,13 @@ int main(void) {
 
     // Keine weiteren Daten vom Client; Verbindung schliessen
     if (close(client_sock) == -1) {
-      perror("Error closing socket.\n");
-      exit(EXIT_FAILURE);
+      perror("Warning: Error closing client socket.\n");
     }
     printf("Connection closed.\n");
+  }
+
+  if (close(server_sock) == -1) {
+    perror("Warning: Error closing server socket.\n");
   }
 
   return EXIT_SUCCESS;
