@@ -1,1 +1,1 @@
-Copied from https://github.com/joyent/http-parser
+The HTTP parser library was copied from https://github.com/joyent/http-parser
