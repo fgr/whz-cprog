@@ -1,1 +1,1 @@
-Copied from [https://github.com/joyent/http-parser]
+Copied from https://github.com/joyent/http-parser
