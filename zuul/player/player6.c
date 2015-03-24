@@ -20,7 +20,7 @@ player_t *player_new(const char *name) {
     exit(EXIT_FAILURE);
   }
 
-  size_t namelen = strlen(name);
+  size_t namelen = strlen(name) + 1;
   p->name = malloc(namelen);
 
   if (p->name == NULL) {
