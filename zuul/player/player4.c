@@ -1,5 +1,5 @@
-// Player (Ausbaustufe 3: Prozedur readline aus eigener Bibliothek verwenden statt lokal
-// zu definieren)
+// Player (Ausbaustufe 4: Prozedur readline() aus eigener Bibliothek verwenden
+// statt sie lokal zu definieren)
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -37,3 +37,4 @@ int main(void) {
 
   return EXIT_SUCCESS;
 }
+
