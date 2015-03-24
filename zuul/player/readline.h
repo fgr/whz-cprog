@@ -1,10 +1,10 @@
 // Header-Datei (-> http://de.wikipedia.org/wiki/Header-Datei)
 
-#include <stddef.h>
-
 // Include-Guard (-> http://de.wikipedia.org/wiki/Include-Guard)
 #ifndef ZUUL_READLINE_H
 #define ZUUL_READLINE_H
+
+#include <stddef.h>
 
 void readline(char *buffer, size_t buffer_size);
 
