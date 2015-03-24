@@ -59,7 +59,7 @@ int header_field_cb(http_parser *p, const char *buf, size_t len) {
 }
 
 int header_value_cb(http_parser *p, const char *buf, size_t len) {
-  info("header_value_cb called");
+  info_with_data("header_value_cb called: ", buf, len);
   return 0;
 }
 
@@ -69,7 +69,7 @@ int headers_complete_cb(http_parser *p) {
 }
 
 int request_body_cb(http_parser *p, const char *buf, size_t len) {
-  info("body_cb called");
+  info_with_data("request_body_cb called: ", buf, len);
   return 0;
 }
 
