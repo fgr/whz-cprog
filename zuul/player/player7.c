@@ -22,7 +22,11 @@ player_t *player_new(const char *name) {
 
   p->energy = 100;
 
-  // Erklaerung fuer unsigned char* siehe -> http://stackoverflow.com/a/1864977
+  // Erklaerung fuer unsigned char* siehe http://stackoverflow.com/a/1864977
+  // und http://c2.com/cgi/wiki?PointerArithmetic
+  // (Zusammenfassung: char-Typ, da garantiert 1 Byte groß; unsigned da nur dann
+  // ohne Padding (siehe http://en.wikipedia.org/wiki/Data_structure_alignment
+  // und http://stackoverflow.com/a/4306269))
   p->name = (char *)(((unsigned char *)p) + sizeof(player_t));
   strncpy(p->name, name, namelen);
 
