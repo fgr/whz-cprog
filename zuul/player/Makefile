@@ -17,6 +17,9 @@ player6: player6.o readline.o
 player6a: player6a.o readline.o
 	$(CC) $(CFLAGS) -o $@ $^
 
+player7: player7.o readline.o
+	$(CC) $(CFLAGS) -o $@ $^
+
 clean:
 	rm -rf *.o
 	rm -rf $(PLAYER_PROGRAMS)
