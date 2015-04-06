@@ -41,4 +41,5 @@ int main(void) {
 	player_t *p = player_new_ask_user_for_name();
 	printf("New player '%s'.\n", p->name);
 	free(p);
+  p = NULL;
 }
